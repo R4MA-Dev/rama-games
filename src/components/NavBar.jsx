@@ -1,6 +1,8 @@
-import '../App.css';
+import '../css/NavBar.css';
+import './CartWidget.jsx'
+import { CartWidget } from './CartWidget.jsx';
 
-function NavBar() {
+const NavBar = ()=>{
   return (
     <nav>
         <p className="logo-p">R4MA GAMES</p>
@@ -11,6 +13,7 @@ function NavBar() {
             <li>PC</li>
         </ul>
         <p className='login-p'>Login</p>
+        <CartWidget count="0" />
     </nav>
   );
 }

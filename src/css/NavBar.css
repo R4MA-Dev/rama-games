@@ -1,0 +1,98 @@
+@font-face {
+  font-family: blacklisted;
+  src: url(./Blacklisted.ttf);
+}
+
+body{
+  background-color: #30193D;
+  font-family: sans-serif;
+}
+
+nav{
+  font-size: 20px;
+  background-color: #B119D6;
+  display: grid;
+  grid-template-columns: 1.2fr 10fr 1fr 0.8fr;
+  box-shadow: 0 0 15px 0px #cc00ff;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+}
+
+ul{
+  display: flex;
+  gap: 80px;
+}
+
+li{
+  list-style: none;
+  padding: 10px;
+}
+
+li:hover{
+  transition: all 0.3s;
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  scale: 1.1;
+  cursor: pointer;
+}
+
+.logo-p{
+  font-size: 25px;
+  font-family: blacklisted;
+  color:#FF8B00;
+  text-shadow: 0 0 5px #FF8B00;
+  animation: neon 1.5s alternate 0s infinite linear;
+}
+
+.login-p{
+  background: black;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+}
+
+.login-p:hover{
+  transition: all 0.3s;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  scale: 1.1;
+}
+
+span.carrito{
+  display: flex;
+  text-align: center;
+}
+
+span.carrito img{
+  width: 40px;
+  height: 40px;
+}
+
+span.carrito p{
+  position: absolute;
+  font-size: 15px;
+  background-color: #ff6600;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+span.carrito:hover{
+  transition: scale 0.3s;
+  cursor: pointer;
+  scale: 1.3;
+}
+
+@keyframes neon {
+  0%{
+    text-shadow: 0 0 5px #FF8B00;
+    scale: 1;
+  }
+  100%{
+    text-shadow: 10px 10px 50px #FF8B00;
+    scale: 1.1;
+  }
+}

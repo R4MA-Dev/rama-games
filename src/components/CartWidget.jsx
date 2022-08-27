@@ -1,4 +1,4 @@
-import logoCart from "../shopping-cart.png"
+import logoCart from "../img/shopping-cart.png"
 
 export const CartWidget = (props)=>{
     return(

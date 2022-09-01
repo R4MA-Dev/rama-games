@@ -1,11 +1,29 @@
 body{
-    background-color: #30193D;
+    background-color: black;
     font-family: sans-serif;
+}
+
+body::-webkit-scrollbar {
+    width: 11px;               /* width of the entire scrollbar */
+}
+  
+body::-webkit-scrollbar-track {
+    background: black;        /* color of the tracking area */
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: aqua;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid black;  /* creates padding around scroll thumb */
 }
 
 h1{
     color: white;
     text-align: center;
+}
+
+main{
+    margin-top: 50px;
 }
 
 #count-container{
@@ -47,7 +65,7 @@ button.btn{
     border: none;
     outline: none;
     font-size: 30px;
-    color: #B119D6;
+    color: #ea095f;
 }
 
 #btnAdd{

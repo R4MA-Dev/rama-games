@@ -1,4 +1,5 @@
 import { useState } from "react"
+import '../css/ItemCount.css'
 
 const ItemCount = ({stock, initial, onAdd})=>{
     const [count, setCount] = useState(initial)
@@ -21,7 +22,6 @@ const ItemCount = ({stock, initial, onAdd})=>{
 
     return(
         <div id="count-container">
-            <p>Item</p>
             <div id="counter">
                 <button onClick={decreaseCount} className="btn" id="btnDecrease">-</button>
                 <p>{count}</p>

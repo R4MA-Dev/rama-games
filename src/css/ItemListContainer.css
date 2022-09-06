@@ -1,3 +1,7 @@
+html{
+    overflow-x: hidden;
+}
+
 body{
     background-color: black;
     font-family: sans-serif;
@@ -17,62 +21,6 @@ body::-webkit-scrollbar-thumb {
     border: 3px solid black;  /* creates padding around scroll thumb */
 }
 
-h1{
-    color: white;
-    text-align: center;
-}
-
 main{
     margin-top: 50px;
-}
-
-#count-container{
-    background-color: #FF8B00;
-    display: flex;
-    margin: 0 auto;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 25%;
-    gap: 20px;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-#counter{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
-    justify-items: center;
-    background-color: white;
-    width: 200px;
-    border-radius: 20px;
-}
-
-#counter p{
-    font-size: 20px;
-}
-
-
-button:hover{
-    transition: all 0.3s;
-    cursor: pointer;
-    scale: 1.1;
-}
-
-button.btn{
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    outline: none;
-    font-size: 30px;
-    color: #ea095f;
-}
-
-#btnAdd{
-    display: block;
-    background-color: aqua;
-    border: none;
-    outline: none;
-    padding: 10px;
-    border-radius: 10px;
 }

@@ -2,8 +2,9 @@ section#products{
     margin-top: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 60vh;
     justify-items: center;
-    align-items: center;
+    align-items: baseline;
     row-gap: 80px;
     margin-bottom: 300px;
 }
@@ -25,6 +26,9 @@ div#product-container{
     width: 40vh;
     padding: 20px;
     border-radius: 40px;
+    line-height: 20px;
+
+    transition: all 1s;
 }
 
 div#product-container:hover{
@@ -32,7 +36,11 @@ div#product-container:hover{
     box-shadow: 0 0 50px 0 #ea095f;
     background-color: black;
     color: white;
-    border: 1px solid white;
+    border: 1px solid #ea095f;
+}
+
+div#product-container:hover button#btn-product{
+    display: block;
 }
 
 img#product-img{
@@ -48,16 +56,12 @@ p#product-price{
     font-size: 30px;
 }
 
-p#product-price span{
-    color: #ea095f;
-    text-shadow: 0px 0px 5px #ea095f;
-}
-
 p#product-plataform{
     font-size: 17px;
 }
 
 button#btn-product{
+    display: none;
     background-color: aqua;
     font-size: 20px;
     width: 200px;
@@ -65,4 +69,9 @@ button#btn-product{
     border: none;
     outline: none;
     border-radius: 10px;
+}
+
+p#product-price span{
+    color: #ea095f;
+    text-shadow: 0px 0px 5px #ea095f;
 }

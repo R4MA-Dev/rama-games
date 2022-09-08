@@ -3,12 +3,15 @@ import customFetch from "../data/customFetch.js"
 import dataProducts from "../data/dataProducts.js"
 import '../css/ItemDetail.css'
 import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
 
 const ItemDetailContainer = ()=>{
     const [data,setData] = useState({})
+    const {idItem} = useParams()
+
     useEffect(()=>{
-        customFetch(2000, dataProducts)
-        .then(data => setData(data[0])) //Para ver los diferentes productos, cambia el numero
+        customFetch(2000, dataProducts.find(item => item.id == idItem))
+        .then(data => setData(data)) //Para ver los diferentes productos, cambia el numero
         .catch(err => console.log(err))
     }, [])
 

@@ -18,9 +18,10 @@ const ItemDetail = ({item})=>{
                 </div>
                 <p id="p-description">{item.description}</p>
                 <p id="p-plataform">Plataforma: {item.plataform}</p>
-                <p id="p-price">Precio: <span>{item.price} AR$</span></p>
-
-                <ItemCount stock={item.stock} initial={1} onAdd={alertAdd} />
+                <div id="buy-box">
+                    <p id="p-price">Precio: <span>{item.price} AR$</span></p>
+                    <ItemCount stock={item.stock} initial={1} onAdd={alertAdd} />
+                </div>
             </div>
         </div>
     )

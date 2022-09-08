@@ -8,7 +8,7 @@ div#item-detail-container{
     background-color: black;
     color: white;
     font-family: sans-serif;
-    height: 100vh;
+    margin-top: 40px;
 }
 
 img#item-img{
@@ -49,6 +49,12 @@ p#p-description{
 
 p#p-plataform{
     font-size: 25px;
+}
+
+div#buy-box{
+    display: flex;
+    align-items: center;
+    gap: 50px;
 }
 
 p#p-price{

@@ -1,10 +1,10 @@
 import logoCart from "../img/shopping-cart.png"
 
-export const CartWidget = (props)=>{
+export const CartWidget = ({count})=>{
     return(
         <span className="carrito">
         <img src={logoCart} alt="Carrito" />
-        <p>{props.count}</p>
+        <p>{count}</p>
         </span>
     );
 }

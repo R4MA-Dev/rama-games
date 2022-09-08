@@ -1,21 +1,17 @@
 import '../css/ItemListContainer.css'
 import '../css/Item.css'
-import ItemCount from './ItemCount.jsx'
+import Header from './Header.jsx'
 import ItemList from './ItemList.jsx'
 
-const ItemListContainer = (props)=>{
-    const alertAdd = ()=>{
-        if(ItemCount.number !== 0){
-            alert(`Ha añadido ${ItemCount.number} elementos al carrito`)
-        }
-    }
+const ItemListContainer = ()=>{
 
     return(
+        <>
+        <Header />
         <main>
             <ItemList />
-            <h1>{props.greeting}</h1>
-            <ItemCount stock={5} initial={1} onAdd={alertAdd} />
         </main>
+        </>
     );
 }
 

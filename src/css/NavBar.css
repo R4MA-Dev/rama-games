@@ -17,6 +17,11 @@ nav{
   align-items: center;
 }
 
+.link{
+  text-decoration: none;
+  color: black;
+}
+
 .logo-p{
   margin-left: 10px;
   font-size: 25px;

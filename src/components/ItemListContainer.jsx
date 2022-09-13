@@ -7,7 +7,6 @@ const ItemListContainer = ()=>{
 
     return(
         <>
-        <Header />
         <main>
             <ItemList />
         </main>

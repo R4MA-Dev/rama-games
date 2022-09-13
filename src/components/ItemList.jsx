@@ -10,7 +10,7 @@ const ItemList = ()=>{
 
     useEffect(()=>{
         if(idCategory){
-            customFetch(2000, dataProducts.filter(item => item.idCategory == idCategory))
+            customFetch(2000, dataProducts.filter(item => item.idCategory === parseInt(idCategory)))
             .then(datos => setData(datos))
             .catch(err => console.log(err))
         }else{

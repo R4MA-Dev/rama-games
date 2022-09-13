@@ -17,7 +17,7 @@ section h2#h2-loading{
     text-align: center;
 }
 
-div#product-container{
+div.product-container{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,7 +30,7 @@ div#product-container{
     transition: all 1s;
 }
 
-div#product-container:hover{
+div.product-container:hover{
     transition: all 0.5s;
     box-shadow: 0 0 50px 0 #ea095f;
     background-color: black;
@@ -38,28 +38,28 @@ div#product-container:hover{
     border: 1px solid #ea095f;
 }
 
-div#product-container:hover button#btn-product{
+div.product-container:hover button.btn-product{
     display: block;
 }
 
-img#product-img{
+img.product-img{
     width: 200px;
     height: 250px;
 }
 
-p#product-name{
+p.product-name{
     font-size: 25px;
 }
 
-p#product-price{
+p.product-price{
     font-size: 30px;
 }
 
-p#product-plataform{
+p.product-plataform{
     font-size: 17px;
 }
 
-button#btn-product{
+button.btn-product{
     display: none;
     background-color: aqua;
     font-size: 20px;
@@ -70,7 +70,7 @@ button#btn-product{
     border-radius: 10px;
 }
 
-p#product-price span{
+p.product-price span{
     color: #ea095f;
     text-shadow: 0px 0px 5px #ea095f;
 }

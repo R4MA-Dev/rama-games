@@ -19,7 +19,7 @@ const NavBar = ()=>{
           <span className='bar'></span>
           <span className='bar'></span>
         </div>
-        <CartWidget count="0" />
+        <Link to="/cart"><CartWidget count="0" /></Link>
     </nav>
   );
 }

@@ -15,7 +15,8 @@ const dataProducts = [
         sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like 
         Aldus PageMaker including versions of Lorem Ipsum.`,
         
-        idCategory : 1
+        idCategory : 1,
+        quantity: 0
     },
 
     {   
@@ -34,7 +35,8 @@ const dataProducts = [
         sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like 
         Aldus PageMaker including versions of Lorem Ipsum.`,
 
-        idCategory : 0
+        idCategory : 0,
+        quantity: 0
     },
 
     {   
@@ -53,7 +55,8 @@ const dataProducts = [
         sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like 
         Aldus PageMaker including versions of Lorem Ipsum.`,
 
-        idCategory : 3
+        idCategory : 3,
+        quantity: 0
     },
 
     {   
@@ -73,7 +76,8 @@ const dataProducts = [
         sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like 
         Aldus PageMaker including versions of Lorem Ipsum.`,
 
-        idCategory : 2
+        idCategory : 2,
+        quantity: 0
     },
 
     {   
@@ -92,7 +96,8 @@ const dataProducts = [
         sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like 
         Aldus PageMaker including versions of Lorem Ipsum.`,
 
-        idCategory : 0
+        idCategory : 0,
+        quantity: 0
     },
 
     {   
@@ -111,7 +116,8 @@ const dataProducts = [
         sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like 
         Aldus PageMaker including versions of Lorem Ipsum.`,
 
-        idCategory : 0
+        idCategory : 0,
+        quantity: 0
     },
 
     {   
@@ -130,7 +136,8 @@ const dataProducts = [
         sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like 
         Aldus PageMaker including versions of Lorem Ipsum.`,
 
-        idCategory : 1
+        idCategory : 1,
+        quantity: 0
     },
 
     {   
@@ -149,7 +156,8 @@ const dataProducts = [
         sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like 
         Aldus PageMaker including versions of Lorem Ipsum.`,
 
-        idCategory : 2
+        idCategory : 2,
+        quantity: 0
     },
 ]
 

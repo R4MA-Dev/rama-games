@@ -1,13 +1,21 @@
+import { CartContext } from "../context/CartContext.jsx"
+import { useContext } from "react"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import ItemCount from "./ItemCount.jsx"
 
 const ItemDetail = ({item})=>{
     const [itemCount, setItemCount] = useState(0)
+    const context = useContext(CartContext)
 
     const alertAdd = (number)=>{
-        alert(`Ha añadido ${number} elementos al carrito`)
-        setItemCount(number)
+        if(item.quantity === item.stock){
+            alert("Has agotado el stock disponible")
+        }else{
+            alert(`Ha añadido ${number} elementos al carrito`)
+            setItemCount(number)
+            context.addItem(item, number)
+        }
     }
 
     return(

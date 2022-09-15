@@ -36,12 +36,12 @@ ul{
   gap: 80px;
 }
 
-li{
+li.nav-item{
   list-style: none;
   padding: 10px;
 }
 
-li:hover{
+li.nav-item:hover{
   transition: all 0.3s;
   background-color: black;
   border-radius: 5px;

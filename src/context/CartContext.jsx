@@ -6,15 +6,26 @@ const CartContextProvider = ({children})=>{
     const [cartList, setCartList] = useState([])
 
     const addItem = (item, quantity) =>{
-        const boolean = isInCart(item)
-        if(boolean === false){
+        if(cartList.length === 0){
             setCartList([
                 ...cartList,
                 item
             ])
             item.quantity = quantity
+            item.stock -= quantity
         }else{
-            item.quantity += quantity
+            const boolean = isInCart(item.id)
+            if(boolean === false){
+                setCartList([
+                    ...cartList,
+                    item
+                ])
+                item.quantity = quantity
+                item.stock -= quantity
+            }else{
+                item.quantity += quantity
+                item.stock -= quantity
+            }
         }
 
     }
@@ -28,8 +39,12 @@ const CartContextProvider = ({children})=>{
         setCartList([])
     }
 
-    const isInCart = (product)=>{
-        return cartList.includes(product)
+    const isInCart = (id)=>{
+        if(cartList.find(e => e.id === id)){
+            return true
+        }else{
+            return false
+        }
     }
 
 

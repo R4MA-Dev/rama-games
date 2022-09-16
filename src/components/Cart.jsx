@@ -5,8 +5,6 @@ import '../css/Cart.css'
 const Cart = ()=>{
     const context = useContext(CartContext)
 
-    console.log(context.cartList)
-
     return (
         <section>
             {

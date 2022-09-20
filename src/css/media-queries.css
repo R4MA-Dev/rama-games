@@ -99,6 +99,7 @@
   
     nav ul li.nav-item{
       margin: 16px 0;
+      display: block;
     }
 
     nav span.carrito{
@@ -129,6 +130,17 @@
   div#item-detail-container div#item-details{
     align-items: center;
   }
+
+
+  /*Cart*/
+  ul li div.item-cart-details{
+    flex-direction: column;
+    width: 65vw;
+  }
+
+  div.item-cart-details div.item-detail-box{
+    flex-direction: row;
+  }
 }
 
 
@@ -141,7 +153,7 @@
       grid-template-columns: 1fr;
     }
     main section div.product-container{
-      width: 60vw;
+      width: 70vw;
     }
 }
 
@@ -170,4 +182,14 @@
     div#item-detail-container div#buy-box{
       flex-direction: column;
     }
+  
+  
+  /*Cart*/
+  section ul.cart-list li{
+    font-size: 20px;
+  }
+
+  ul li div.item-cart-details button{
+    font-size: 20px;
+  }
 }

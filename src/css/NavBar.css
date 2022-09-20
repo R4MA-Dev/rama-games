@@ -39,6 +39,7 @@ ul{
 li.nav-item{
   list-style: none;
   padding: 10px;
+  display: inline;
 }
 
 li.nav-item:hover{
@@ -93,7 +94,6 @@ span.carrito img{
 span.carrito p{
   position: absolute;
   font-size: 15px;
-  background-color: #ff6600;
   border-radius: 50%;
   width: 20px;
   height: 20px;

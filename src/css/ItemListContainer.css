@@ -24,3 +24,13 @@ body::-webkit-scrollbar-thumb {
 main{
     margin-top: 50px;
 }
+
+button{
+    transition: all 0.3s;
+}
+
+button:hover{
+    transition: all 0.3s;
+    cursor: pointer;
+    scale: 1.1;
+}

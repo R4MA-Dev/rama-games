@@ -1,4 +1,4 @@
-export function navBar(e){
+export function navBar(){
     let hamburger = document.getElementById("div");
     let ulMenu = document.getElementById("ul");
     

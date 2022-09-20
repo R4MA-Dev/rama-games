@@ -42,7 +42,7 @@ const dataProducts = [
     {   
         id: 2,
         img : "https://i.ibb.co/59yBnsS/r6.jpg",
-        name : "Tom Clancy's Rainbow Six Siege",
+        name : "TC Rainbow Six Siege",
         price : "3500",
         plataform : "PC",
 

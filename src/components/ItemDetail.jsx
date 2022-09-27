@@ -2,6 +2,8 @@ import { CartContext } from "../context/CartContext.jsx"
 import { useContext } from "react"
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import ItemCount from "./ItemCount.jsx"
 
 const ItemDetail = ({item})=>{
@@ -9,16 +11,23 @@ const ItemDetail = ({item})=>{
     const context = useContext(CartContext)
 
     const alertAdd = (number)=>{
-        if(item.quantity === item.stock){
-            alert("Has agotado el stock disponible")
-        }else{
-            alert(`Ha añadido ${number} elementos al carrito`)
-            setItemCount(number)
-            context.addItem(item, number)
-        }
+        setItemCount(number)
+        context.addItem(item, number)
     }
 
     return(
+        <>
+        <ToastContainer
+        position="bottom-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        />
         <div id="item-detail-container">
             <img id="item-img" src={item.img} alt="Imagen Juego" />
             <div id="item-details">
@@ -40,6 +49,7 @@ const ItemDetail = ({item})=>{
                 </div>
             </div>
         </div>
+        </>
     )
 }
 

@@ -1,12 +1,62 @@
 import { useContext } from "react"
 import { CartContext } from "../context/CartContext"
 import { Link } from "react-router-dom"
+import { doc, setDoc, updateDoc, serverTimestamp, collection, increment } from "firebase/firestore"
+import { db } from "../data/firebaseConfig"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import '../css/Cart.css'
 
 const Cart = ()=>{
     const context = useContext(CartContext)
 
+    const itemsForDB = context.cartList.map(item => ({
+        id : item.id,
+        name : item.name,
+        price : item.price,
+        quantity : item.quantity
+    }))
+
+    const createOrder = async ()=>{
+        let order = {
+            buyer : {
+                name : "Ramiro Mercado",
+                email : "rama@gmail.com",
+                phone : "2614671464",
+                date : serverTimestamp()
+            },
+            items : itemsForDB,
+            total : context.calcAll()
+        }
+
+        const orderId = doc(collection(db, "orders"))
+        await setDoc(orderId, order)
+
+        context.cartList.map(async (item) => {
+            const itemRef = doc(db, "products", item.id)
+            await updateDoc(itemRef, {
+                stock : increment(-item.quantity)
+            })
+        })
+
+        context.clear()
+        toast(`Su orden ha sido creada. \n
+        ID de Orden: ${orderId.id}`)
+    }
+
     return (
+        <>
+        <ToastContainer
+        position="bottom-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        />
         <section>
             {
             
@@ -64,12 +114,12 @@ const Cart = ()=>{
 
                 :   <div id="checkout-container">
                     <p>Total de productos: {context.qtyProducts()}</p>
-                    <p>Total: {context.calcAll()}AR$</p>
-                    <button id="btn-checkout" className="btn-buy">Pasar al pago</button>
+                    <p>Total a pagar: {context.calcAll()}AR$</p>
+                    <button id="btn-checkout" className="btn-buy" onClick={createOrder}>Pasar al pago</button>
                     </div>
             }
         </section>
-        
+        </>
     )
 }
 

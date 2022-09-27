@@ -1,8 +1,15 @@
-import { db } from "../data/firebaseConfig.js";
-import { collection, getDocs } from "firebase/firestore";
+import { db } from "./firebaseConfig.js";
+import { collection, doc, getDocs, getDoc, query, where } from "firebase/firestore";
 
-const getData = async()=>{
-    const querySnapshot = await getDocs(collection(db, "products"));
+const getData = async (idCategory)=>{
+    let items;
+    if(idCategory){
+        items = query(collection(db, "products"), where("idCategory", "==", parseInt(idCategory)));
+    }else{
+        items = query(collection(db, "products"));
+    }
+
+    const querySnapshot = await getDocs(items);
     const dataFromFirestore = querySnapshot.docs.map(item => ({
         id : item.id,
         ...item.data()
@@ -11,26 +18,18 @@ const getData = async()=>{
     return dataFromFirestore
 }
 
-const getDataFiltered = async(id)=>{
-    const querySnapshot = await getDocs(collection(db, "products"));
-    const dataFromFirestore = querySnapshot.docs.map(item => ({
-        id : item.id,
-        ...item.data()
-    }))
-    const dataFiltered = dataFromFirestore.filter(item => item.idCategory === parseInt(id))
+const getProduct = async (idItem)=>{
+    const item = doc(db, "products", idItem)
+    const getItem = await getDoc(item)
 
-    return dataFiltered
+    if(getItem.exists()){
+        return {
+            id: idItem,
+            ...getItem.data()
+        }
+    }else{
+        console.log("No se encuentra el documento")
+    }
 }
 
-const getProduct = async(id)=>{
-    const querySnapshot = await getDocs(collection(db, "products"));
-    const dataFromFirestore = querySnapshot.docs.map(item => ({
-        id : item.id,
-        ...item.data()
-    }))
-    const dataFiltered = dataFromFirestore.find(item => item.id === id)
-
-    return dataFiltered
-}
-
-export {getData, getDataFiltered, getProduct}
+export {getData, getProduct}

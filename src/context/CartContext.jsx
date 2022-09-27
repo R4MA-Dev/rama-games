@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { toast } from 'react-toastify';
 
 export const CartContext = createContext()
 
@@ -6,28 +7,29 @@ const CartContextProvider = ({children})=>{
     const [cartList, setCartList] = useState([])
 
     const addItem = (item, quantity) =>{
-        if(cartList.length === 0){
-            setCartList([
-                ...cartList,
-                item
-            ])
-            item.quantity = quantity
-            item.stock -= quantity
-        }else{
-            const boolean = isInCart(item.id)
-            if(boolean === false){
+            let repeatedObject = cartList.find(product => product.id === item.id)
+
+            if(repeatedObject === undefined){
                 setCartList([
                     ...cartList,
-                    item
+                    {
+                        id : item.id,
+                        img : item.img,
+                        name : item.name,
+                        price : item.price,
+                        quantity : quantity
+                    }
                 ])
-                item.quantity = quantity
-                item.stock -= quantity
+                toast(`Se han añadido ${quantity} producto/s al carrito`)
             }else{
-                item.quantity += quantity
-                item.stock -= quantity
+                if(repeatedObject.quantity >= item.stock || repeatedObject.quantity + quantity > item.stock){
+                    toast("No puedes comprar mas del stock disponible")
+                }else{
+                    repeatedObject.quantity += quantity
+                    setCartList([...cartList])
+                    toast(`Se han añadido ${quantity} producto/s al carrito`)
+                }
             }
-        }
-
     }
 
     const removeItem = (id)=>{
@@ -37,14 +39,6 @@ const CartContextProvider = ({children})=>{
 
     const clear = ()=>{
         setCartList([])
-    }
-
-    const isInCart = (id)=>{
-        if(cartList.find(e => e.id === id)){
-            return true
-        }else{
-            return false
-        }
     }
 
     const qtyProducts = ()=>{

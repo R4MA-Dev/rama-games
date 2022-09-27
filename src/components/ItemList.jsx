@@ -1,29 +1,26 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Item from "./Item.jsx";
-import {getData, getDataFiltered} from '../data/firebaseFetch.js'
+import {getData} from '../data/firebaseFetch.js'
 
 const ItemList = ()=>{
     const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true)
     const {idCategory} = useParams();
 
     useEffect(() =>{
-        if(idCategory){
-            getDataFiltered(idCategory)
-            .then(data => setData(data))
-            .catch(err => console.log(err))
-        }else{
-            getData()
-            .then(data => setData(data))
-            .catch(err => console.log(err))
-        }
+        getData(idCategory)
+        .then(data => {
+            setData(data)
+            setLoading(false)})
+        .catch(err => console.log(err))
     }, [idCategory])
 
 
     return(
         <section id="products">
             {
-                data.length ?
+                loading === false ?
                 data.map(item => (
                     <Item 
                         key = {item.id}
@@ -34,7 +31,9 @@ const ItemList = ()=>{
                         id = {item.id}
                     />
                 ))
-                : <h2 id="h2-loading">Cargando Productos...</h2>
+                :<div className="content-spinner">
+                    <div className="spinner"></div>
+                </div>
             }
         </section>
     )

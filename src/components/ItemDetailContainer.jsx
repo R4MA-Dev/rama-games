@@ -6,16 +6,23 @@ import { getProduct } from "../data/firebaseFetch.js"
 
 const ItemDetailContainer = ()=>{
     const [data, setData] = useState({})
+    const [loading, setLoading] = useState(true)
     const {idItem} = useParams()
 
     useEffect(()=>{
         getProduct(idItem)
-        .then(data => setData(data))
+        .then(data => {
+            setData(data)
+            setLoading(false)})
         .catch(err => console.log(err))
     }, [idItem])
 
     return(
-        <ItemDetail item={data}/>
+        loading === false 
+        ? <ItemDetail item={data}/>
+        :<div className="content-spinner">
+            <div className="spinner"></div>
+        </div>
     )
 }
 

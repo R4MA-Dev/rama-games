@@ -1,0 +1,24 @@
+.content-spinner{
+    position: absolute;
+    width: 100%;
+    background-color: var(--dark-accent);
+}
+
+.spinner{
+    border: 4px solid rgba(0, 0, 0, .1);
+    width:72px;
+    height:72px;
+    border-radius: 50%;
+    margin: 50px auto;
+    border-left-color: aqua;
+
+    animation: spin 1s ease infinite;
+}
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

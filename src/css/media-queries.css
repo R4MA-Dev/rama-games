@@ -141,6 +141,10 @@
   div.item-cart-details div.item-detail-box{
     flex-direction: row;
   }
+
+  section div#checkout-container{
+    width: 50vw;
+  }
 }
 
 

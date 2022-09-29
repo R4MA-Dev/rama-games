@@ -1,6 +1,6 @@
 import music from '../js/header.js'
-import '../css/Header.css'
 import imagen from '../img/imagen-header.png'
+import '../css/Header.css'
 
 const Header = ()=>{
     return(

@@ -98,12 +98,12 @@
     }
   
     nav ul li.nav-item{
-      margin: 16px 0;
+      margin: 16px -20px;
       display: block;
     }
 
     nav span.carrito{
-      margin-right: -10px;
+      margin-right: -30px;
     }
 
 

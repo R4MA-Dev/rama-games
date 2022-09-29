@@ -1,10 +1,9 @@
 import { CartContext } from "../context/CartContext.jsx"
-import { useContext } from "react"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import ItemCount from "./ItemCount.jsx"
+import 'react-toastify/dist/ReactToastify.css';
 
 const ItemDetail = ({item})=>{
     const [itemCount, setItemCount] = useState(0)
@@ -19,7 +18,7 @@ const ItemDetail = ({item})=>{
         <>
         <ToastContainer
         position="bottom-left"
-        autoClose={5000}
+        autoClose={3000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick

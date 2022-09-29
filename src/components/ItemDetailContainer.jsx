@@ -1,8 +1,8 @@
 import ItemDetail from "./ItemDetail.jsx"
-import '../css/ItemDetail.css'
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { getProduct } from "../data/firebaseFetch.js"
+import '../css/ItemDetail.css'
 
 const ItemDetailContainer = ()=>{
     const [data, setData] = useState({})

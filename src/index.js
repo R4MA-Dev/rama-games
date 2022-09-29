@@ -10,7 +10,7 @@ import ItemDetailContainer from './components/ItemDetailContainer.jsx'
 import Cart from './components/Cart.jsx'
 import { BrowserRouter } from 'react-router-dom';
 import { Routes, Route } from 'react-router-loading';
-import CartContextProvider from './context/CartContext';
+import CartContextProvider from './context/CartContext.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

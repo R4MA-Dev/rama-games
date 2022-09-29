@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# RAMA GAMES
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+_Una tienda e-commerce de videojuegos, una SPA (Single Page App) conectada a una DB para mostrar los productos y detalles de estos._
 
-## Available Scripts
 
-In the project directory, you can run:
+## Comenzando 🚀
 
-### `npm start`
+_Lo unico a tener en cuenta, es que tengas [Node.js](https://nodejs.org/es/) instalado en tu ordenador._
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Pre-requisitos 📋
 
-### `npm test`
+_Para que el proyecto funcione, simplemente instala las dependencias del **package.json**._
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+npm install
+```
 
-### `npm run build`
+### Como usarlo ⌨️
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+_Para poder hostear el proyecto en tu ordenardor, debes abrir un dev-server._
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+_Primero asegurate de tener este script en tu **package.json**._
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+"start": "react-scripts start"
+```
 
-### `npm run eject`
+_Y finalmente ejecuta en la consola._
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+npm run start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Despliegue 📦
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+_Para hacer deploy compila los archivos que irán en producción._
 
-## Learn More
+```
+npm run build
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+_Una vez termine el proceso, te dejara una carpeta llamada **build** y  esa carpeta es la que usara el hosting para el deploy._
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Construido con 🛠️
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+_Herramientas utilizadas para este proyecto._
 
-### Analyzing the Bundle Size
+* [ReactJS](https://es.reactjs.org/) - Framework de JavaScript para el renderizado
+* [NPM](https://www.npmjs.com/) - Gestor de paquetes
+* [Create-React-App](https://create-react-app.dev/) - Paquete para crear nuestra app de ReactJS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## Autores ✒️
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+_Proyecto hecho junto con CoderHouse_
 
-### Advanced Configuration
+* **Ramiro Mercado** - *Coder* - [R4MA-Dev](https://github.com/R4MA-Dev)
+* **Alex Marin Mendez** - *Profesor* - [alexmarinmendez](https://github.com/alexmarinmendez)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+## Licencia 📄
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Este proyecto está bajo la Licencia (MIT) - mira el archivo [LICENSE.md](LICENSE.md) para detalles.
 
-### `npm run build` fails to minify
+## Expresiones de Gratitud 🎁
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Comenta a otros sobre este proyecto 📢
+* Da las gracias públicamente 🤓.
+
+
+
+---
+⌨️ con ❤️ por [R4MA-Dev](https://github.com/R4MA-Dev)

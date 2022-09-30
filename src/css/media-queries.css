@@ -1,5 +1,11 @@
 @media (max-width:1600px) {
     /*Header*/
+    header{
+      height: 60vh;
+    }
+    header div#mascara{
+      height: 60vh;
+    }
     header img#imagen-header{
       width:300px;
     }
@@ -52,6 +58,24 @@
       font-size: 25px;
     }
 
+}
+
+
+
+
+
+@media (max-width:1366px){
+  /*Header*/
+  header{
+    height: 50vh;
+  }
+  header div#mascara{
+    justify-content: flex-start;
+    height: 50vh;
+  }
+  header img#imagen-header{
+    width:200px;
+  }
 }
 
 

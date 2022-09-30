@@ -1,7 +1,9 @@
 import { CartContext } from "../context/CartContext.jsx"
-import { useContext, useState } from "react"
+import { useContext, useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { ToastContainer } from 'react-toastify';
+import Aos from "aos"
+import 'aos/dist/aos.css'
 import ItemCount from "./ItemCount.jsx"
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -13,6 +15,10 @@ const ItemDetail = ({item})=>{
         setItemCount(number)
         context.addItem(item, number)
     }
+
+    useEffect(()=>{
+        Aos.init({duration: 500})
+    }, [])
 
     return(
         <>
@@ -27,7 +33,7 @@ const ItemDetail = ({item})=>{
         draggable
         pauseOnHover
         />
-        <div id="item-detail-container">
+        <div id="item-detail-container" data-aos="fade-up">
             <img id="item-img" src={item.img} alt="Imagen Juego" />
             <div id="item-details">
                 <div>

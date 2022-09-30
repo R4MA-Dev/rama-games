@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import Item from "./Item.jsx";
 import {getData} from '../data/firebaseFetch.js'
@@ -16,11 +16,10 @@ const ItemList = ()=>{
         .catch(err => console.log(err))
     }, [idCategory])
 
-
     return(
+        loading === false ?
         <section id="products">
             {
-                loading === false ?
                 data.map(item => (
                     <Item 
                         key = {item.id}
@@ -31,11 +30,12 @@ const ItemList = ()=>{
                         id = {item.id}
                     />
                 ))
-                :<div className="content-spinner">
-                    <div className="spinner"></div>
-                </div>
             }
         </section>
+
+        :<div className="content-spinner">
+        <div className="spinner"></div>
+        </div>
     )
 }
 

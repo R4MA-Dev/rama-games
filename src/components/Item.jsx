@@ -1,9 +1,17 @@
 import { Link } from "react-router-dom"
+import { useEffect} from "react"
+import Aos from "aos"
+import 'aos/dist/aos.css'
 
 const Item = ({img, name, price, plataform,id})=>{
+
+    useEffect(()=>{
+        Aos.init({duration: 500})
+    },[])
+
     return(
         <>  
-            <div className="product-container">
+            <div className="product-container" data-aos="fade-up">
                 <img className="product-img" src={img} alt="Imagen Juego" />
                 <p className="product-name">{name}</p>
                 <p className="product-plataform">Plataforma: <strong>{plataform}</strong></p>

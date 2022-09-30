@@ -17,11 +17,9 @@
 @keyframes saturate {
     0%{
         filter: saturate(1);
-        scale: 1;
     }
     100%{
         filter: saturate(2.5);
-        scale: 1.05;
     }
 }
   
@@ -56,11 +54,7 @@ img#imagen-header{
 }
 
 img#imagen-header:hover{
-    cursor: pointer;
-}
-
-img#imagen-header.animado{
-    animation: saturate 0.2s alternate 0s infinite linear;
+    animation: saturate 0.5s alternate 0s infinite linear;
 }
 
 span#logo{

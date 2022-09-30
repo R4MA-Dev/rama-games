@@ -6,7 +6,7 @@ section#products{
     justify-items: center;
     align-items: baseline;
     row-gap: 80px;
-    margin-bottom: 200px;
+    margin-bottom: 50px;
 }
 
 section h2#h2-loading{
@@ -25,7 +25,7 @@ div.product-container{
     background-color: white;
     width: 20vw;
     padding: 20px;
-    border-radius: 40px;
+    border-radius: 10px;
 
     transition: all 1s;
 }

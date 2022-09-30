@@ -170,11 +170,28 @@
     div#root nav{
       grid-template-columns: 1fr 5fr 1fr 0.5fr;
     }
+
+  
+  /*Header*/
+  header{
+    height: 40vh;
+  }
+  header img#imagen-header{
+    width: 190px;
+  }
+  header span#logo{
+    font-size: 25px;
+  }
+  header div#mascara{
+    height: 40vh;
+    justify-content: flex-start;
+    gap: 30px;
+  }
   
   
   /*ItemDetailContainer*/
     main section#products{
-      row-gap: 110px;
+      row-gap: 45px;
     }
 
 

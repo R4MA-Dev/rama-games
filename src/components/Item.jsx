@@ -6,7 +6,7 @@ import 'aos/dist/aos.css'
 const Item = ({img, name, price, plataform,id})=>{
 
     useEffect(()=>{
-        Aos.init({duration: 500})
+        Aos.init({duration: 300})
     },[])
 
     return(

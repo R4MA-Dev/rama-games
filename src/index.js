@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './css/normalize.css'
-import './css/media-queries.css'
-import './css/spinner.css'
 import NavBar from './components/NavBar.jsx';
-import Header from './components/Header';
 import ItemListContainer from './components/ItemListContainer.jsx';
 import ItemDetailContainer from './components/ItemDetailContainer.jsx'
 import Cart from './components/Cart.jsx'
 import { BrowserRouter } from 'react-router-dom';
 import { Routes, Route } from 'react-router-loading';
 import CartContextProvider from './context/CartContext.jsx';
+import './css/normalize.css'
+import './css/media-queries.css'
+import './css/spinner.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,7 +17,6 @@ root.render(
     <CartContextProvider>
       <BrowserRouter>
         <NavBar />
-        <Header />
         <Routes>
           <Route path='/' element={<ItemListContainer/>} />
           <Route path='/category/:idCategory' element={<ItemListContainer/>}/>

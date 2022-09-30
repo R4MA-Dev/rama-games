@@ -1,4 +1,3 @@
-import music from '../js/header.js'
 import imagen from '../img/imagen-header.png'
 import '../css/Header.css'
 
@@ -6,7 +5,7 @@ const Header = ()=>{
     return(
         <header>
             <div id="mascara">
-            <img onClick={music} id="imagen-header" src={imagen} alt="Imagen Header" />
+            <img id="imagen-header" src={imagen} alt="Imagen Header" />
             <span id="logo">R4MA GAMES</span>
             </div>
         </header>

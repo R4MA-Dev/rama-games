@@ -17,7 +17,7 @@ const ItemDetail = ({item})=>{
     }
 
     useEffect(()=>{
-        Aos.init({duration: 500})
+        Aos.init({duration: 300})
     }, [])
 
     return(

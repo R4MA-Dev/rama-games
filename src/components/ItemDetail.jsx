@@ -5,6 +5,7 @@ import { ToastContainer } from 'react-toastify';
 import Aos from "aos"
 import 'aos/dist/aos.css'
 import ItemCount from "./ItemCount.jsx"
+import Footer from "./Footer.jsx";
 import 'react-toastify/dist/ReactToastify.css';
 
 const ItemDetail = ({item})=>{
@@ -54,6 +55,7 @@ const ItemDetail = ({item})=>{
                 </div>
             </div>
         </div>
+        <Footer />
         </>
     )
 }

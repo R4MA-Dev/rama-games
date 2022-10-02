@@ -76,6 +76,17 @@
   header img#imagen-header{
     width:200px;
   }
+
+  /*ItemListContainer*/
+  main section div.product-container p.product-name{
+    font-size: 20px;
+  }
+  main section div.product-container p.product-price{
+    font-size: 25px;
+  }
+  main section div.product-container p.product-plataform{
+    font-size: 13px;
+  }
 }
 
 
@@ -211,12 +222,6 @@
     justify-content: flex-start;
     gap: 30px;
   }
-  
-  
-  /*ItemDetailContainer*/
-    main section#products{
-      row-gap: 45px;
-    }
 
 
   /*ItemDetail*/

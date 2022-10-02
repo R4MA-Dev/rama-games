@@ -1,6 +1,7 @@
 import { useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import Item from "./Item.jsx";
+import Footer from "./Footer.jsx";
 import {getData} from '../data/firebaseFetch.js'
 
 const ItemList = ()=>{
@@ -18,6 +19,7 @@ const ItemList = ()=>{
 
     return(
         loading === false ?
+        <>
         <section id="products">
             {
                 data.map(item => (
@@ -32,7 +34,8 @@ const ItemList = ()=>{
                 ))
             }
         </section>
-
+        <Footer />
+        </>
         :<div className="content-spinner">
         <div className="spinner"></div>
         </div>

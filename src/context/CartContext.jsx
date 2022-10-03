@@ -5,6 +5,7 @@ export const CartContext = createContext()
 
 const CartContextProvider = ({children})=>{
     const [cartList, setCartList] = useState([])
+    const [boolean, setBoolean] = useState(false)
 
     const addItem = (item, quantity) =>{
             let repeatedObject = cartList.find(product => product.id === item.id)
@@ -20,14 +21,17 @@ const CartContextProvider = ({children})=>{
                         quantity : quantity
                     }
                 ])
-                toast(`Se han añadido ${quantity} producto/s al carrito`)
+                toast.success(`Se han añadido ${quantity} producto/s al carrito`)
+                setBoolean(true)
             }else{
                 if(repeatedObject.quantity >= item.stock || repeatedObject.quantity + quantity > item.stock){
-                    toast("No puedes comprar mas del stock disponible")
+                    toast.warning("No puedes comprar mas del stock disponible")
+                    setBoolean(false)
                 }else{
                     repeatedObject.quantity += quantity
                     setCartList([...cartList])
-                    toast(`Se han añadido ${quantity} producto/s al carrito`)
+                    toast.success(`Se han añadido ${quantity} producto/s al carrito`)
+                    setBoolean(true)
                 }
             }
     }
@@ -58,7 +62,7 @@ const CartContextProvider = ({children})=>{
     }
 
     return (
-        <CartContext.Provider value={{cartList, addItem, removeItem, clear, qtyProducts, calcAll}}>
+        <CartContext.Provider value={{cartList, boolean, setBoolean, addItem, removeItem, clear, qtyProducts, calcAll}}>
             {children}
         </CartContext.Provider>
     )

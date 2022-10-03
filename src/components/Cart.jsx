@@ -40,7 +40,7 @@ const Cart = ()=>{
         })
 
         context.clear()
-        toast(`Su orden ha sido creada. \n
+        toast.success(`Su orden ha sido creada. \n
         ID de Orden: ${orderId.id}`)
     }
 
@@ -56,6 +56,7 @@ const Cart = ()=>{
         pauseOnFocusLoss
         draggable
         pauseOnHover
+        theme="colored"
         />
         <section>
             {

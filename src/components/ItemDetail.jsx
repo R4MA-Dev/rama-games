@@ -1,5 +1,5 @@
 import { CartContext } from "../context/CartContext.jsx"
-import { useContext, useState, useEffect } from "react"
+import { useContext, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { ToastContainer } from 'react-toastify';
 import Aos from "aos"
@@ -9,16 +9,15 @@ import Footer from "./Footer.jsx";
 import 'react-toastify/dist/ReactToastify.css';
 
 const ItemDetail = ({item})=>{
-    const [itemCount, setItemCount] = useState(0)
     const context = useContext(CartContext)
 
     const alertAdd = (number)=>{
-        setItemCount(number)
         context.addItem(item, number)
     }
 
     useEffect(()=>{
         Aos.init({duration: 300})
+        context.setBoolean(false)
     }, [])
 
     return(
@@ -33,6 +32,7 @@ const ItemDetail = ({item})=>{
         pauseOnFocusLoss
         draggable
         pauseOnHover
+        theme="colored"
         />
         <div id="item-detail-container" data-aos="fade-up">
             <img id="item-img" src={item.img} alt="Imagen Juego" />
@@ -48,8 +48,8 @@ const ItemDetail = ({item})=>{
                 <div id="buy-box">
                     <p id="p-price">Precio: <span>{item.price} AR$</span></p>
                     {   
-                        itemCount === 0
-                        ? <ItemCount stock={item.stock} initial={itemCount} onAdd={alertAdd} />
+                        context.boolean === false
+                        ? <ItemCount stock={item.stock} initial={0} onAdd={alertAdd} />
                         : <Link to="/cart"><button id="btn-checkout">Checkout</button></Link>
                     }
                 </div>

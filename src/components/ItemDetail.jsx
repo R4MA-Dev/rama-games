@@ -9,15 +9,15 @@ import Footer from "./Footer.jsx";
 import 'react-toastify/dist/ReactToastify.css';
 
 const ItemDetail = ({item})=>{
-    const context = useContext(CartContext)
+    const {addItem, boolean, setBoolean} = useContext(CartContext)
 
     const alertAdd = (number)=>{
-        context.addItem(item, number)
+        addItem(item, number)
     }
 
     useEffect(()=>{
         Aos.init({duration: 300})
-        context.setBoolean(false)
+        setBoolean(false)
     }, [])
 
     return(
@@ -48,7 +48,7 @@ const ItemDetail = ({item})=>{
                 <div id="buy-box">
                     <p id="p-price">Precio: <span>{item.price} AR$</span></p>
                     {   
-                        context.boolean === false
+                        boolean === false
                         ? <ItemCount stock={item.stock} initial={0} onAdd={alertAdd} />
                         : <Link to="/cart"><button id="btn-checkout">Checkout</button></Link>
                     }

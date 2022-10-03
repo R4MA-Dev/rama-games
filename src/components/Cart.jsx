@@ -8,9 +8,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import '../css/Cart.css'
 
 const Cart = ()=>{
-    const context = useContext(CartContext)
+    const { calcAll, clear, removeItem, cartList, qtyProducts } = useContext(CartContext)
 
-    const itemsForDB = context.cartList.map(item => ({
+    const itemsForDB = cartList.map(item => ({
         id : item.id,
         name : item.name,
         price : item.price,
@@ -26,20 +26,20 @@ const Cart = ()=>{
                 date : serverTimestamp()
             },
             items : itemsForDB,
-            total : context.calcAll()
+            total : calcAll()
         }
 
         const orderId = doc(collection(db, "orders"))
         await setDoc(orderId, order)
 
-        context.cartList.map(async (item) => {
+        cartList.map(async (item) => {
             const itemRef = doc(db, "products", item.id)
             await updateDoc(itemRef, {
                 stock : increment(-item.quantity)
             })
         })
 
-        context.clear()
+        clear()
         toast.success(`Su orden ha sido creada. \n
         ID de Orden: ${orderId.id}`)
     }
@@ -64,17 +64,17 @@ const Cart = ()=>{
             }
             <div id="btn-container">
                 {
-                    context.cartList.length === 0
+                    cartList.length === 0
                     ?   <>
                         <h1 style={{color: "white"}}>El carrito esta vacio</h1>
                         <Link to="/"><button id="btn-volver">Ir a los productos</button></Link>
                         </>
-                    : <button id="btn-deleteAll" onClick={context.clear}>Borrar Todo</button>
+                    : <button id="btn-deleteAll" onClick={clear}>Borrar Todo</button>
                 }
             </div>
             <ul className="cart-list">
                 {
-                    context.cartList.map(item => 
+                    cartList.map(item => 
                         <li key={item.id}>
                             {   
                             <>  
@@ -102,7 +102,7 @@ const Cart = ()=>{
                                     </div>
 
                                     <button className="btn-delete" 
-                                    onClick={()=> context.removeItem(item.id)}>Borrar</button>
+                                    onClick={()=> removeItem(item.id)}>Borrar</button>
                                 </div>
                             </>
                             }
@@ -110,12 +110,12 @@ const Cart = ()=>{
                 }
             </ul>
             {
-                context.cartList.length === 0
+                cartList.length === 0
                 ? <></>
 
                 :   <div id="checkout-container">
-                    <p>Total de productos: {context.qtyProducts()}</p>
-                    <p>Total a pagar: {context.calcAll()}AR$</p>
+                    <p>Total de productos: {qtyProducts()}</p>
+                    <p>Total a pagar: {calcAll()}AR$</p>
                     <button id="btn-checkout" className="btn-buy" onClick={createOrder}>Pasar al pago</button>
                     </div>
             }

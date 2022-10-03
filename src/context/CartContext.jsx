@@ -26,7 +26,6 @@ const CartContextProvider = ({children})=>{
             }else{
                 if(repeatedObject.quantity >= item.stock || repeatedObject.quantity + quantity > item.stock){
                     toast.warning("No puedes comprar mas del stock disponible")
-                    setBoolean(false)
                 }else{
                     repeatedObject.quantity += quantity
                     setCartList([...cartList])

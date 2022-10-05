@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 html{
     overflow-x: hidden;
 }
@@ -29,7 +33,7 @@ button{
     transition: all 0.3s;
 }
 
-button:hover{
+button:hover:not(.btn-product){
     transition: all 0.3s;
     cursor: pointer;
     scale: 1.1;

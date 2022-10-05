@@ -1,20 +1,11 @@
 section#products{
     margin-top: 50px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-auto-rows: 60vh;
+    grid-template-columns:repeat(4, 1fr);
     justify-items: center;
     align-items: baseline;
-    row-gap: 15vh;
+    row-gap: 60px;
     margin-bottom: 100px;
-}
-
-section h2#h2-loading{
-    position: absolute;
-    margin: 0 auto;
-    font-size: 30px;
-    color: white;
-    text-align: center;
 }
 
 div.product-container{
@@ -26,8 +17,6 @@ div.product-container{
     width: 20vw;
     padding: 20px;
     border-radius: 10px;
-
-    transition: all 1s;
 }
 
 div.product-container:hover{
@@ -36,6 +25,8 @@ div.product-container:hover{
     background-color: black;
     color: white;
     border: 1px solid #ea095f;
+
+    transition: all 0.2s ease-in;
 }
 
 div.product-container:hover button.btn-product{
@@ -45,6 +36,7 @@ div.product-container:hover button.btn-product{
 img.product-img{
     width: 200px;
     height: 250px;
+    border-radius: 5px;
 }
 
 p.product-name{
@@ -60,14 +52,30 @@ p.product-plataform{
 }
 
 button.btn-product{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s;
+
     display: none;
-    background-color: aqua;
-    font-size: 20px;
-    width: 200px;
-    height: 50px;
-    border: none;
+    background-color: #ea095f;
+    font-size: 25px;
+    width: 75%;
+    height: 20%;
+
+    border: 3px solid aqua;
+    border-radius: 5px;
     outline: none;
-    border-radius: 10px;
+}
+
+button.btn-product:hover{
+    cursor: pointer;
+    color: white;
+    width: 100%;
+    border-right: none;
+    border-left: none;
+    border-radius: 0px;
 }
 
 p.product-price span{

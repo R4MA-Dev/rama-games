@@ -1,12 +1,21 @@
+//React
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
+//Context
+import CartContextProvider from './context/CartContext.jsx';
+
+//Components
 import NavBar from './components/NavBar.jsx';
 import ItemListContainer from './components/ItemListContainer.jsx';
 import ItemDetailContainer from './components/ItemDetailContainer.jsx'
 import Cart from './components/Cart.jsx'
+
+//Libraries
 import { BrowserRouter } from 'react-router-dom';
 import { Routes, Route } from 'react-router-loading';
-import CartContextProvider from './context/CartContext.jsx';
+
+//CSS
 import './css/normalize.css'
 import './css/media-queries.css'
 import './css/spinner.css'

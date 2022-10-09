@@ -242,8 +242,14 @@
     div#item-detail-container div#buy-box{
       flex-direction: column;
     }
+
   
-  
+  /*Footer*/
+  footer div.footer-content p#logo-footer{
+    font-size: 30px;
+  }
+
+
   /*Cart*/
   section ul.cart-list li{
     font-size: 20px;

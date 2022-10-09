@@ -1,11 +1,22 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import { toast } from 'react-toastify';
 
 export const CartContext = createContext()
 
 const CartContextProvider = ({children})=>{
-    const [cartList, setCartList] = useState([])
+    const items =  localStorage.getItem("items")
+    const [cartList, setCartList] = useState(()=>{
+        if(items === null){
+            return []
+        }else{
+            return JSON.parse(items)
+        }
+    })
     const [boolean, setBoolean] = useState(false)
+
+    useEffect(()=>{
+        localStorage.setItem("items", JSON.stringify(cartList))
+    }, [ cartList ])
 
     const addItem = (item, quantity) =>{
             let repeatedObject = cartList.find(product => product.id === item.id)

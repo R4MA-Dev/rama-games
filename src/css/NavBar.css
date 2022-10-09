@@ -51,21 +51,6 @@ li.nav-item:hover{
   cursor: pointer;
 }
 
-/*.login-p{
-  background: black;
-  border-radius: 10px;
-  padding: 10px;
-  color: white;
-}
-
-.login-p:hover{
-  transition: all 0.3s;
-  cursor: pointer;
-  background-color: white;
-  color: black;
-  scale: 1.1;
-}*/
-
 .hamburger{
   visibility: hidden;
   cursor: pointer;

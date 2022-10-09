@@ -51,6 +51,7 @@ li div.item-cart-details{
 div.item-cart-details img{
     width: 150px;
     height: 200px;
+    border-radius: 5px;
 }
 
 div.item-detail-box{

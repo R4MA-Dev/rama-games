@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import '../css/Cart.css'
 
 const Cart = ()=>{
-    const { calcAll, clear, removeItem, cartList, qtyProducts } = useContext(CartContext)
+    const { calcAll, clear, removeItem, cartList, qtyProducts} = useContext(CartContext)
 
     const itemsForDB = cartList.map(item => ({
         id : item.id,
@@ -40,6 +40,7 @@ const Cart = ()=>{
         })
 
         clear()
+        
         toast.success(`Su orden ha sido creada. \n
         ID de Orden: ${orderId.id}`)
     }

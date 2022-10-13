@@ -12,7 +12,6 @@ const CartContextProvider = ({children})=>{
             return JSON.parse(items)
         }
     })
-    const [boolean, setBoolean] = useState(false)
 
     useEffect(()=>{
         localStorage.setItem("items", JSON.stringify(cartList))
@@ -33,7 +32,6 @@ const CartContextProvider = ({children})=>{
                     }
                 ])
                 toast.success(`Se han añadido ${quantity} producto/s al carrito`)
-                setBoolean(true)
             }else{
                 if(repeatedObject.quantity >= item.stock || repeatedObject.quantity + quantity > item.stock){
                     toast.warning("No puedes comprar mas del stock disponible")
@@ -41,7 +39,6 @@ const CartContextProvider = ({children})=>{
                     repeatedObject.quantity += quantity
                     setCartList([...cartList])
                     toast.success(`Se han añadido ${quantity} producto/s al carrito`)
-                    setBoolean(true)
                 }
             }
     }
@@ -72,7 +69,7 @@ const CartContextProvider = ({children})=>{
     }
 
     return (
-        <CartContext.Provider value={{cartList, boolean, setBoolean, addItem, removeItem, clear, qtyProducts, calcAll}}>
+        <CartContext.Provider value={{cartList, setCartList, addItem, removeItem, clear, qtyProducts, calcAll}}>
             {children}
         </CartContext.Provider>
     )

@@ -42,7 +42,7 @@ li.nav-item{
   display: inline;
 }
 
-li.nav-item:hover{
+li.nav-item:hover:not(.btn){
   transition: all 0.3s;
   background-color: black;
   border-radius: 5px;
@@ -63,6 +63,24 @@ span.bar{
   margin: 5px auto;
   transition: all 0.3s ease-in-out;
   background-color: white;
+}
+
+button#login{
+  font-size: 17px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: -8px;
+  border: none;
+  background-color:#FF8B00;
+}
+
+button#logout{
+  font-size: 17px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: -8px;
+  border: none;
+  background-color:aqua;
 }
 
 span.carrito{

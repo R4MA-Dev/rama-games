@@ -1,24 +1,19 @@
 import { CartContext } from "../context/CartContext.jsx"
-import { useContext, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { useContext } from "react"
 import { ToastContainer } from 'react-toastify';
-import Aos from "aos"
-import 'aos/dist/aos.css'
 import ItemCount from "./ItemCount.jsx"
 import Footer from "./Footer.jsx";
 import 'react-toastify/dist/ReactToastify.css';
+import { UserContext } from "../context/UserContext.jsx";
+
 
 const ItemDetail = ({item})=>{
-    const {addItem, boolean, setBoolean} = useContext(CartContext)
+    const { addItem } = useContext(CartContext)
+    const { session } = useContext(UserContext)
 
     const alertAdd = (number)=>{
         addItem(item, number)
     }
-
-    useEffect(()=>{
-        Aos.init({duration: 300})
-        setBoolean(false)
-    }, [])
 
     return(
         <>
@@ -44,13 +39,16 @@ const ItemDetail = ({item})=>{
                 
                 <p id="p-description">{item.description}</p>
                 <p id="p-plataform">Plataforma: {item.plataform}</p>
-
                 <div id="buy-box">
-                    <p id="p-price">Precio: <span>{item.price} AR$</span></p>
-                    {   
-                        boolean === false
-                        ? <ItemCount stock={item.stock} initial={0} onAdd={alertAdd} />
-                        : <Link to="/cart"><button id="btn-checkout">Checkout</button></Link>
+                    {
+                        session === false
+                        ?
+                        <p style={{color : "red", fontSize: "20px"}}>Debes iniciar sesion para añadir al carrito</p>
+                        :
+                        <>                    
+                        <p id="p-price">Precio: <span>{item.price} AR$</span></p>
+                        <ItemCount stock={item.stock} initial={0} onAdd={alertAdd} />
+                        </>
                     }
                 </div>
             </div>

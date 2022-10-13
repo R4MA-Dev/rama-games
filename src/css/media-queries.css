@@ -196,6 +196,15 @@
     main section div.product-container{
       width: 35vw;
     }
+  
+  /*Login*/
+    form{
+      width: 90%;
+      gap: 15px;
+    }
+    input.input-text{
+      width: 100%;
+    }
 }
 
 
@@ -205,7 +214,7 @@
 @media (max-width:600px){
   /*NavBar*/
     div#root nav{
-      grid-template-columns: 1fr 5fr 1fr 0.5fr;
+      grid-template-columns: 1fr 5fr 1fr 0.8fr;
     }
 
   
@@ -257,5 +266,12 @@
 
   ul li div.item-cart-details button{
     font-size: 20px;
+  }
+}
+
+@media (max-height:670px) {
+  /*Login*/
+  form{
+    top: 65%;
   }
 }

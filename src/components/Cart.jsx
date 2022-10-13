@@ -1,14 +1,16 @@
 import { useContext } from "react"
-import { CartContext } from "../context/CartContext"
+import { CartContext } from "../context/CartContext.jsx"
 import { Link } from "react-router-dom"
 import { doc, setDoc, updateDoc, serverTimestamp, collection, increment } from "firebase/firestore"
 import { db } from "../data/firebaseConfig"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../css/Cart.css'
+import { UserContext } from "../context/UserContext.jsx"
 
 const Cart = ()=>{
     const { calcAll, clear, removeItem, cartList, qtyProducts} = useContext(CartContext)
+    const { user } = useContext(UserContext)
 
     const itemsForDB = cartList.map(item => ({
         id : item.id,
@@ -20,9 +22,8 @@ const Cart = ()=>{
     const createOrder = async ()=>{
         let order = {
             buyer : {
-                name : "Ramiro Mercado",
-                email : "rama@gmail.com",
-                phone : "2614671464",
+                email : user.email,
+                id : user.id,
                 date : serverTimestamp()
             },
             items : itemsForDB,
@@ -43,6 +44,7 @@ const Cart = ()=>{
         
         toast.success(`Su orden ha sido creada. \n
         ID de Orden: ${orderId.id}`)
+        toast.success(`Se ha enviado una orden a su nombre`)
     }
 
     return (
@@ -117,7 +119,11 @@ const Cart = ()=>{
                 :   <div id="checkout-container">
                     <p>Total de productos: {qtyProducts()}</p>
                     <p>Total a pagar: {calcAll()}AR$</p>
-                    <button id="btn-checkout" className="btn-buy" onClick={createOrder}>Pasar al pago</button>
+                    {
+                        user === {}
+                        ? <button id="btn-checkout" className="btn-buy">Pasar al pago</button>
+                        : <button id="btn-checkout" className="btn-buy" onClick={createOrder}>Pasar al pago</button>
+                    }
                     </div>
             }
         </section>

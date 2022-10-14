@@ -38,14 +38,17 @@ const Register = ()=>{
             }, 3000)
 
         }catch(error){
-            if(error.code === 'auth/invalid-email'){
+            if(email === "" || password === ""){
+                toast.error("Rellene los campos requeridos")
+            }
+            else if(error.code === 'auth/invalid-email'){
                 toast.error("Email Invalido")
-            }else if(error.code === 'auth/weak-password'){
+            }
+            else if(error.code === 'auth/weak-password'){
                 toast.error("La contraseña debe tener minimo 6 caracteres")
-            }else if(error.code === 'auth/email-already-in-use'){
+            }
+            else if(error.code === 'auth/email-already-in-use'){
                 toast.error("El Email ya esta registrado")
-            }else if(error.code){
-                toast.error("Algo salio mal")
             }
         }
 
@@ -65,6 +68,7 @@ const Register = ()=>{
         pauseOnHover
         theme="colored"
         />
+        <div className="container">
             <form>
                 <h3>Registrarse</h3>
                 <label htmlFor="email">E-mail</label>
@@ -87,6 +91,7 @@ const Register = ()=>{
                     </>
                 }
             </form>
+        </div>
         </>
     )
 }

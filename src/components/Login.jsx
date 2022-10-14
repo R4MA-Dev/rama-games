@@ -65,6 +65,7 @@ const Login = ()=>{
         pauseOnHover
         theme="colored"
         />
+        <div className="container">
             <form>
                 <h3>Iniciar Sesión</h3>
                 <label htmlFor="email">E-mail</label>
@@ -88,6 +89,7 @@ const Login = ()=>{
                     </>
                 }
             </form>
+        </div>
         </>
     )
 }

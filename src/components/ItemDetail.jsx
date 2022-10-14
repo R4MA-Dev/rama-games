@@ -1,10 +1,12 @@
 import { CartContext } from "../context/CartContext.jsx"
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { ToastContainer } from 'react-toastify';
 import ItemCount from "./ItemCount.jsx"
 import Footer from "./Footer.jsx";
 import 'react-toastify/dist/ReactToastify.css';
 import { UserContext } from "../context/UserContext.jsx";
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
 
 const ItemDetail = ({item})=>{
@@ -14,6 +16,10 @@ const ItemDetail = ({item})=>{
     const alertAdd = (number)=>{
         addItem(item, number)
     }
+
+    useEffect(()=>{
+        Aos.init({duration : 300})
+    }, [])
 
     return(
         <>

@@ -199,8 +199,8 @@
   
   /*Login*/
     form{
-      width: 90%;
-      gap: 15px;
+      width: 85%;
+      gap: 20px;
     }
     input.input-text{
       width: 100%;

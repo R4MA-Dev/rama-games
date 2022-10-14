@@ -3,8 +3,7 @@ import '../data/firebaseConfig.js'
 import { navBar } from '../js/navbar.js';
 import { CartWidget } from './CartWidget.jsx';
 import '../css/NavBar.css';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 import { signOut } from 'firebase/auth';
 import { auth } from '../data/firebaseConfig.js';
 import { useContext } from 'react';
@@ -24,18 +23,6 @@ const NavBar = ()=>{
 
   return (
     <>
-    <ToastContainer
-      position="bottom-left"
-      autoClose={5000}
-      hideProgressBar={false}
-      newestOnTop={false}
-      closeOnClick
-      rtl={false}
-      pauseOnFocusLoss
-      draggable
-      pauseOnHover
-      theme="colored"
-    />
     <nav>
         <Link className='link' to="/"><p className="logo-p">R4MA GAMES</p></Link>
         <ul id="ul" className="ul-menu">
